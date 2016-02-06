@@ -24,8 +24,9 @@ class FunctionalSieve: PrimeGenerator {
 }
 
 class PrimesDataSource: NSObject, UITableViewDataSource {
-
     var primes = FunctionalSieve().primesUpTo(70000)
+    var didFinishGeneratingPrimes: (() -> ())?
+
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PrimeCell", forIndexPath: indexPath)
         let formatter = NSDateFormatter()
@@ -48,6 +49,7 @@ class PrimesDataSource: NSObject, UITableViewDataSource {
     }
 
     func refresh() {
-        primes = FunctionalSieve().primesUpTo(2000000)
+        self.primes = FunctionalSieve().primesUpTo(9000)
+        self.didFinishGeneratingPrimes?()
     }
 }

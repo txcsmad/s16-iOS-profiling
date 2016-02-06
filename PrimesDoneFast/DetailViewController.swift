@@ -34,7 +34,7 @@ class DetailViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        //print?("Received memory warning!")
+        print?("Received memory warning!")
         // Dispose of any resources that can be recreated.
     }
 

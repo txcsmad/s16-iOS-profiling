@@ -4,6 +4,7 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     let dataSource = PrimesDataSource()
+    let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -12,9 +13,13 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Refresh, target: dataSource, action: "refresh")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: "refresh")
         tableView.dataSource = dataSource
-        tableView.reloadData()
+        activityIndicator.hidesWhenStopped = true
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: activityIndicator)
+
+        refresh()
+
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -25,6 +30,11 @@ class MasterViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    func refresh() {
+        activityIndicator.startAnimating()
+        dataSource.refresh()
     }
 
     // MARK: - Segues
