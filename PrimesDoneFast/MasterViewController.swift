@@ -14,8 +14,13 @@ class MasterViewController: UITableViewController {
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: "refresh")
+
         tableView.dataSource = dataSource
         activityIndicator.hidesWhenStopped = true
+        dataSource.didFinishGeneratingPrimes = {
+            self.activityIndicator.stopAnimating()
+            self.tableView.reloadData()
+        }
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: activityIndicator)
 
         refresh()
