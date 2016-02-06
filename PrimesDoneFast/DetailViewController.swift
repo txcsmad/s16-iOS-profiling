@@ -1,17 +1,9 @@
-//
-//  DetailViewController.swift
-//  PrimesDoneFast
-//
-//  Created by Nick Walker on 2/5/16.
-//  Copyright © 2016 Nick Walker. All rights reserved.
-//
-
 import UIKit
 
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
-
+    var print: ((String) -> ())?
 
     var detailItem: AnyObject? {
         didSet {
@@ -27,6 +19,11 @@ class DetailViewController: UIViewController {
                 label.text = detail.description
             }
         }
+        // Make UIKit cry
+        for _ in 0..<5000 {
+            addRandomSubview()
+        }
+        print = printToView
     }
 
     override func viewDidLoad() {
@@ -37,9 +34,26 @@ class DetailViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        //print?("Received memory warning!")
         // Dispose of any resources that can be recreated.
     }
 
+
+    // MARK:- Display
+
+    private func addRandomSubview() {
+        let newSubview = RandomView()
+        newSubview.backgroundColor = UIColor.randomColor()
+        newSubview.frame = CGRect.randomWithin(view.bounds)
+        view.addSubview(newSubview)
+        view.sendSubviewToBack(newSubview)
+    }
+
+    // MARK:- Printing
+
+    private func printToView(text: String) {
+        detailDescriptionLabel.text! += "\n" + text
+    }
 
 }
 

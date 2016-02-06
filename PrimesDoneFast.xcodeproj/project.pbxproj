@@ -14,6 +14,10 @@
 		D49F45181C656CDC00E1B283 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D49F45171C656CDC00E1B283 /* Assets.xcassets */; };
 		D49F451B1C656CDC00E1B283 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D49F45191C656CDC00E1B283 /* LaunchScreen.storyboard */; };
 		D49F45261C656CDD00E1B283 /* PrimesDoneFastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49F45251C656CDD00E1B283 /* PrimesDoneFastTests.swift */; };
+		D49F45311C65703000E1B283 /* PrimesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49F45301C65703000E1B283 /* PrimesDataSource.swift */; };
+		D4EACD7C1C658CFE00E0CE95 /* UIColor+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EACD7B1C658CFE00E0CE95 /* UIColor+Random.swift */; };
+		D4EACD7E1C658DA400E0CE95 /* CGRect+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EACD7D1C658DA400E0CE95 /* CGRect+Random.swift */; };
+		D4EACD801C65973200E0CE95 /* RandomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EACD7F1C65973200E0CE95 /* RandomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,10 @@
 		D49F45211C656CDD00E1B283 /* PrimesDoneFastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrimesDoneFastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D49F45251C656CDD00E1B283 /* PrimesDoneFastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimesDoneFastTests.swift; sourceTree = "<group>"; };
 		D49F45271C656CDD00E1B283 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D49F45301C65703000E1B283 /* PrimesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimesDataSource.swift; sourceTree = "<group>"; };
+		D4EACD7B1C658CFE00E0CE95 /* UIColor+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Random.swift"; path = "PrimesDoneFast/UIColor+Random.swift"; sourceTree = "<group>"; };
+		D4EACD7D1C658DA400E0CE95 /* CGRect+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Random.swift"; sourceTree = "<group>"; };
+		D4EACD7F1C65973200E0CE95 /* RandomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,8 @@
 		D49F45021C656CDC00E1B283 = {
 			isa = PBXGroup;
 			children = (
+				D4EACD7D1C658DA400E0CE95 /* CGRect+Random.swift */,
+				D4EACD7B1C658CFE00E0CE95 /* UIColor+Random.swift */,
 				D49F450D1C656CDC00E1B283 /* PrimesDoneFast */,
 				D49F45241C656CDD00E1B283 /* PrimesDoneFastTests */,
 				D49F450C1C656CDC00E1B283 /* Products */,
@@ -80,12 +90,10 @@
 			isa = PBXGroup;
 			children = (
 				D49F450E1C656CDC00E1B283 /* AppDelegate.swift */,
-				D49F45101C656CDC00E1B283 /* MasterViewController.swift */,
-				D49F45121C656CDC00E1B283 /* DetailViewController.swift */,
-				D49F45141C656CDC00E1B283 /* Main.storyboard */,
-				D49F45171C656CDC00E1B283 /* Assets.xcassets */,
-				D49F45191C656CDC00E1B283 /* LaunchScreen.storyboard */,
-				D49F451C1C656CDC00E1B283 /* Info.plist */,
+				D4EACD811C659C8900E0CE95 /* Controllers */,
+				D4EACD831C659CA800E0CE95 /* Views */,
+				D4EACD821C659C9E00E0CE95 /* Support */,
+				D49F45301C65703000E1B283 /* PrimesDataSource.swift */,
 			);
 			path = PrimesDoneFast;
 			sourceTree = "<group>";
@@ -97,6 +105,34 @@
 				D49F45271C656CDD00E1B283 /* Info.plist */,
 			);
 			path = PrimesDoneFastTests;
+			sourceTree = "<group>";
+		};
+		D4EACD811C659C8900E0CE95 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D49F45101C656CDC00E1B283 /* MasterViewController.swift */,
+				D49F45121C656CDC00E1B283 /* DetailViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D4EACD821C659C9E00E0CE95 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				D49F45171C656CDC00E1B283 /* Assets.xcassets */,
+				D49F451C1C656CDC00E1B283 /* Info.plist */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		D4EACD831C659CA800E0CE95 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D49F45141C656CDC00E1B283 /* Main.storyboard */,
+				D49F45191C656CDC00E1B283 /* LaunchScreen.storyboard */,
+				D4EACD7F1C65973200E0CE95 /* RandomView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,8 +236,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4EACD801C65973200E0CE95 /* RandomView.swift in Sources */,
+				D4EACD7C1C658CFE00E0CE95 /* UIColor+Random.swift in Sources */,
+				D49F45311C65703000E1B283 /* PrimesDataSource.swift in Sources */,
 				D49F45131C656CDC00E1B283 /* DetailViewController.swift in Sources */,
 				D49F45111C656CDC00E1B283 /* MasterViewController.swift in Sources */,
+				D4EACD7E1C658DA400E0CE95 /* CGRect+Random.swift in Sources */,
 				D49F450F1C656CDC00E1B283 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +430,7 @@
 				D49F452C1C656CDD00E1B283 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D49F452D1C656CDD00E1B283 /* Build configuration list for PBXNativeTarget "PrimesDoneFastTests" */ = {
 			isa = XCConfigurationList;
@@ -398,6 +439,7 @@
 				D49F452F1C656CDD00E1B283 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
